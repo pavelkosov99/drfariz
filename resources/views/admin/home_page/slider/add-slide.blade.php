@@ -18,6 +18,14 @@
 
     <x-adminlte-text-editor name="text" label="Main text" placeholder="Insert description..." :config="$config"/>
 
+    <x-adminlte-input-file label="Upload an image" name="image" igroup-size="sm" placeholder="Choose an image...">
+        <x-slot name="prependSlot">
+            <div class="input-group-text bg-lightblue">
+                <i class="fas fa-upload"></i>
+            </div>
+        </x-slot>
+    </x-adminlte-input-file>
+
     <a  href="{{route('home-page-slider.store')}}">
         <x-adminlte-button class="btn-flat mt-2 mb-2" type="submit" label="Add a slide" theme="success" icon="fas fa-lg fa-plus"/>
     </a>

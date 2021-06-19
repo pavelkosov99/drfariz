@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\NewsPage;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\HomePageSliderRequest;
+use App\Models\HomePageSlider;
 
 class SliderController extends Controller
 {
-
     public function index()
     {
         return view('admin.home_page.slider.slider');
@@ -18,14 +18,21 @@ class SliderController extends Controller
         return view('admin.home_page.slider.add-slide');
     }
 
-    public function store(Request $request)
+    public function store(HomePageSliderRequest $request)
     {
+        $create = HomePageSlider::create($request->validated());
 
+        if(!$create){
+            return redirect()->back()->with('error', 'Element has not been created');
+        }
+        return redirect()->route('home-page-slider.create')->with('success', 'Element has been created');
     }
 
     public function show($id)
     {
+        $slide = HomePageSlider::query()->findOrFail($id);
 
+        return view('admin.home_page.slider.slider')->with(compact('slide'));
     }
 
     public function edit($id)
@@ -33,7 +40,7 @@ class SliderController extends Controller
 
     }
 
-    public function update(Request $request, $id)
+    public function update(HomePageSliderRequest $request, $id)
     {
 
     }
