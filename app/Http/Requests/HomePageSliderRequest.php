@@ -13,7 +13,7 @@ class HomePageSliderRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class HomePageSliderRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => ['required'],
+            'subtitle' => ['required'],
+            'text' => ['required'],
+            'image' => ['required']
         ];
     }
 }
