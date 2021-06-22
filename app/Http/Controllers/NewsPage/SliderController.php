@@ -15,12 +15,14 @@ class SliderController extends Controller
 {
     public function index()
     {
-        return view('admin.home_page.slider.slider');
+        $sliders = HomePageSlider::query()->orderBy('updated_at', 'desc')->get();
+
+        return view('admin.home_page.slider.slider')->with(compact('sliders'));
     }
 
     public function create()
     {
-        return view('admin.home_page.slider.add-slide');
+        return view('admin.home_page.slider.create');
     }
 
     public function store(HomePageSliderRequest $request, HomePageSlider $model)
@@ -44,7 +46,7 @@ class SliderController extends Controller
     {
         $slide = HomePageSlider::query()->findOrFail($id);
 
-        return view('admin.home_page.slider.slider')->with(compact('slide'));
+        return view('admin.home_page.slider.show')->with(compact('slide'));
     }
 
     public function edit($id)
