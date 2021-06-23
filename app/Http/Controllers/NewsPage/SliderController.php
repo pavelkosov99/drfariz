@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\NewsPage;
 
 use App\Http\Controllers\Controller;
-use App\Http\Modules\SaveModule;
 use App\Http\Requests\HomePageSliderRequest;
 use App\Models\HomePageSlider;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\File;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -17,7 +16,7 @@ class SliderController extends Controller
     {
         $sliders = HomePageSlider::query()->orderBy('updated_at', 'desc')->get();
 
-        return view('admin.home_page.slider.slider')->with(compact('sliders'));
+        return view('admin.home_page.slider.index')->with(compact('sliders'));
     }
 
     public function create()
@@ -25,19 +24,10 @@ class SliderController extends Controller
         return view('admin.home_page.slider.create');
     }
 
-    public function store(HomePageSliderRequest $request, HomePageSlider $model)
+    public function store(HomePageSliderRequest $request, HomePageSlider $model): RedirectResponse
     {
 
-        $fullPath = Storage::putFile(
-            'uploads/images/' . substr(strrchr(static::class, '\\'), 1) . '/' . Carbon::now()->toDateString(),
-            $request->file('image')
-        );
-
-        $model->title = $request->input('title');
-        $model->subtitle = $request->input('subtitle');
-        $model->text = $request->input('text');
-        $model->image = $fullPath;
-        $model->save();
+        $this->save($model, $request);
 
         return redirect()->back()->with('success', 'Element has been created');
     }
@@ -53,38 +43,43 @@ class SliderController extends Controller
     {
         $slide = HomePageSlider::query()->findOrFail($id);
 
-        return view('admin.home_page.slider.slider')->with(compact('slide'));
+        return view('admin.home_page.slider.edit')->with(compact('slide'));
     }
 
-    public function update(HomePageSliderRequest $request, HomePageSlider $model, $id)
+    public function update(HomePageSliderRequest $request, HomePageSlider $model, $id): RedirectResponse
     {
 
         $slide = $model->findOrFail($id);
 
-        unlink(public_path($slide->image));
+/*        if($slide->isDirty('image')){
+            unlink($slide->image);
+        }*/
 
-        $fullPath = Storage::putFile(
-            'uploads/images/' . substr(strrchr(static::class, '\\'), 1) . '/' . Carbon::now()->toDateString(),
-            $request->file('image')
-        );
-
-        $slide->title = $request->input('title');
-        $slide->subtitle = $request->input('subtitle');
-        $slide->text = $request->input('text');
-        $slide->image = $fullPath;
-        $slide->save();
+        $this->save($slide, $request);
 
         return redirect()->back()->with('success', 'Element has been updated successfully');
     }
 
-    public function destroy($id, HomePageSlider $model)
+    public function destroy($id, HomePageSlider $model): RedirectResponse
     {
-        $imageName = $model->find($id)->image;
-        $imageFullPath = '/uploads/news/images/'.$imageName;
-        unlink(public_path($imageFullPath));
+        $slide = $model->findOrFail($id);
+
+        unlink($slide->image);
 
         $model->findOrFail($id)->delete();
 
-        return redirect()->route('news-all-dashboard')->with('success', 'News have been deleted');
+        return redirect()->route('home-page-slider.index')->with('success', 'News have been deleted');
+    }
+
+    private function save($model, $request): void
+    {
+        $path = 'uploads/images/' . substr(strrchr(static::class, '\\'), 1) . '/' . Carbon::now()->toDateString();
+        $fullPath = $request->file('image')->store($path, 'public');
+
+        $model->title = $request->input('title');
+        $model->subtitle = $request->input('subtitle');
+        $model->text = $request->input('text');
+        $model->image = "storage/" . $fullPath;
+        $model->save();
     }
 }
