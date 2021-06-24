@@ -34,9 +34,7 @@
         </div>
 
         <div class="ml-2">
-            <a href="{{route('home-page-slider.store')}}">
-                <x-adminlte-button name="submit" class="btn-flat mt-2 mb-2" type="submit" label="Add a slide" theme="success" icon="fas fa-lg fa-plus"/>
-            </a>
+            <x-adminlte-button name="submit" class="btn-flat mt-2 mb-2" type="submit" label="Add a slide" theme="success" icon="fas fa-lg fa-plus"/>
         </div>
     </form>
 @stop
