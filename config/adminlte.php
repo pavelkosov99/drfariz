@@ -244,7 +244,7 @@ return [
                 [
                     'text' => 'Speciality',
                     'icon' => 'fas fa-user-md nav-icon',
-                    'url'  => 'admin/home-page/speciality',
+                    'url'  => 'admin/home-page/home-page-speciality',
                 ],
                 [
                     'text' => 'Welcome',
