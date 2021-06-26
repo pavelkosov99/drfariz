@@ -249,27 +249,27 @@ return [
                 [
                     'text' => 'Welcome',
                     'icon' => 'fas fa-hand-sparkles nav-icon',
-                    'url'  => 'admin/home-page/welcome',
+                    'url'  => 'admin/home-page/home-page-welcome',
                 ],
                 [
                     'text' => 'Our Departments',
                     'icon' => 'fas fa-sitemap nav-icon',
-                    'url'  => 'admin/home-page/our-departments',
+                    'url'  => 'admin/home-page/home-page-our-departments',
                 ],
                 [
                     'text' => 'Comments',
                     'icon' => 'fas fa-comments nav-icon',
-                    'url'  => 'admin/home-page/comments',
+                    'url'  => 'admin/home-page/home-page-comments',
                 ],
                 [
                     'text' => 'Expert area',
                     'icon' => 'fas fa-thumbs-up nav-icon',
-                    'url'  => 'admin/home-page/expert-area',
+                    'url'  => 'admin/home-page/home-page-expert-area',
                 ],
                 [
                     'text' => 'Awards',
                     'icon' => 'fas fa-award nav-icon',
-                    'url'  => 'admin/home-page/awards',
+                    'url'  => 'admin/home-page/home-page-awards',
                 ],
             ],
         ],
@@ -433,6 +433,16 @@ return [
                     'type' => 'css',
                     'asset' => true,
                     'location' => 'vendor/summernote/summernote-bs4.min.css',
+                ],
+            ],
+        ],
+        'BsCustomFileInput' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/bs-custom-file-input/bs-custom-file-input.min.js',
                 ],
             ],
         ],

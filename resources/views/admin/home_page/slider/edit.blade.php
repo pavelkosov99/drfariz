@@ -32,7 +32,7 @@
                     </div>
                 </x-slot>
             </x-adminlte-input-file>
-            <label for="image"></label>
+            <label for="thumbnail"></label>
             <img name="thumbnail" width="500px" height="300px" src="{{ asset($slide->image) }}">
         </div>
 

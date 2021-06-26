@@ -12,19 +12,19 @@
         <x-adminlte-input name="title_1" label="Title 1" placeholder="Enter the title 1" fgroup-class="col-md-9" value="{{$data->title_1}}"/>
         <x-adminlte-input name="subtitle_1" label="Subtitle 1" placeholder="Enter the subtitle 1" fgroup-class="col-md-9" value="{{$data->subtitle_1}}"/>
 
-        <x-adminlte-input name="subtitle_2" label="Title 2" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="{{$data->title_2}}"/>
+        <x-adminlte-input name="title_2" label="Title 2" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="{{$data->title_2}}"/>
         <x-adminlte-input name="subtitle_2" label="Subtitle 2" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="{{$data->subtitle_2}}"/>
 
-        <x-adminlte-input name="subtitle_3" label="Title 3" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="{{$data->title_3}}"/>
+        <x-adminlte-input name="title_3" label="Title 3" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="{{$data->title_3}}"/>
         <x-adminlte-input name="subtitle_3" label="Subtitle 3" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="{{$data->subtitle_3}}"/>
         @empty
             <x-adminlte-input name="title_1" label="Title 1" placeholder="Enter the title 1" fgroup-class="col-md-9" value="No data"/>
             <x-adminlte-input name="subtitle_1" label="Subtitle 1" placeholder="Enter the subtitle 1" fgroup-class="col-md-9" value="No data"/>
 
-            <x-adminlte-input name="subtitle_2" label="Title 2" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="No data"/>
+            <x-adminlte-input name="title_2" label="Title 2" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="No data"/>
             <x-adminlte-input name="subtitle_2" label="Subtitle 2" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="No data"/>
 
-            <x-adminlte-input name="subtitle_3" label="Title 3" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="No data"/>
+            <x-adminlte-input name="title_3" label="Title 3" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="No data"/>
             <x-adminlte-input name="subtitle_3" label="Subtitle 3" placeholder="Enter the subtitle 2" fgroup-class="col-md-9" value="No data"/>
         @endforelse
         <div class="ml-2">
