@@ -26,9 +26,9 @@ class SpecialityController extends Controller
             'subtitle_3' => ['required'],
         ]);
 
-        $speciality = $model->query()->where('id', 1)->get();
+        //$speciality = $model->query()->where('id', 1)->get();
 
-        if(is_null($speciality))
+        if(is_null($model->query()->where('id', 1)->get()))
         {
             $model->title_1 = $request->input('title_1');
             $model->subtitle_1 = $request->input('subtitle_1');
@@ -43,6 +43,8 @@ class SpecialityController extends Controller
 
             return redirect()->back()->with('success', 'Element has been created');
         }
+
+        $speciality = $model->findOrFail(1);
 
         $speciality->title_1 = $request->input('title_1');
         $speciality->subtitle_1 = $request->input('subtitle_1');

@@ -91,8 +91,13 @@ class SliderController extends Controller
     {
         $slide = $model->findOrFail($id);
 
-        unlink($slide->image);
+        if(!file_exists($slide->image)){
+            $model->findOrFail($id)->delete();
 
+            return redirect()->route('home-page-slider.index')->with('success', 'News have been deleted');
+        }
+
+        unlink($slide->image);
         $model->findOrFail($id)->delete();
 
         return redirect()->route('home-page-slider.index')->with('success', 'News have been deleted');
