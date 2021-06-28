@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\HomePage;
+namespace App\Http\Controllers\Admin\HomePage;
 
 use App\Http\Controllers\Controller;
 use App\Models\HomePageSlider;
