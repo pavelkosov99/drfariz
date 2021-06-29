@@ -14,7 +14,7 @@
 @section('plugins.Summernote', true)
 @section('content')
 
-    <form action="{{route('home-page-slider.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('home-page-welcome.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         @forelse($welcome as $data)
         <x-adminlte-input name="title" label="Title" placeholder="Enter the title" fgroup-class="col-md-9" value="{{$data->title}}"/>
@@ -33,8 +33,9 @@
                 </x-slot>
             </x-adminlte-input-file>
         </div>
-            <label for="thumbnail"></label>
-            <img name="thumbnail" width="500px" height="300px" src="{{ asset($slide->image) }}">
+
+        <label for="thumbnail"></label>
+        <img name="thumbnail" width="500px" height="300px" src="{{ asset($data->image) }}">
         @empty
             <x-adminlte-input name="title" label="Title" placeholder="Enter the title" fgroup-class="col-md-9" value="No data"/>
             <x-adminlte-input name="subtitle" label="Subtitle" placeholder="Enter the subtitle" fgroup-class="col-md-9" value="No data"/>

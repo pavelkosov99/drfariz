@@ -33,7 +33,6 @@ class SliderController extends Controller
         ]);
 
         $path = 'uploads/images/' . substr(strrchr(static::class, '\\'), 1) . '/' . Carbon::now()->toDateString();
-
         $fullPath = $request->file('image')->store($path, 'public');
         $model->image = "storage/" . $fullPath;
 
@@ -70,7 +69,7 @@ class SliderController extends Controller
 
         $slide = $model->findOrFail($id);
 
-        if($request->hasFile('image') && $request->image !== $slide->image){
+        if($request->hasFile('image')){
             unlink($slide->image);
 
             $path = 'uploads/images/' . substr(strrchr(static::class, '\\'), 1) . '/' . Carbon::now()->toDateString();
