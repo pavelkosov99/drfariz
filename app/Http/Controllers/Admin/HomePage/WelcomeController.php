@@ -68,7 +68,7 @@ class WelcomeController extends Controller
                 'text' => ['required'],
                 'image' => ['required']
             ]);
-            
+
             $fullPath = $request->file('image')->store($path, 'public');
             $model->image = "storage/" . $fullPath;
 
@@ -87,5 +87,6 @@ class WelcomeController extends Controller
             return redirect()->back()->with('success', 'Element has been updated');
         }
 
+        return redirect()->back()->with('error', 'Element has not been updated');
     }
 }

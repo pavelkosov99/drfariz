@@ -254,55 +254,24 @@ return [
                 [
                     'text' => 'Our Departments',
                     'icon' => 'fas fa-sitemap nav-icon',
-                    'url'  => 'admin/home-page/home-page-our-departments',
+                    'url'  => 'admin/home-page/home-page-department',
                 ],
                 [
                     'text' => 'Comments',
                     'icon' => 'fas fa-comments nav-icon',
-                    'url'  => 'admin/home-page/home-page-comments',
+                    'url'  => 'admin/home-page/home-page-comment',
                 ],
                 [
                     'text' => 'Expert area',
                     'icon' => 'fas fa-thumbs-up nav-icon',
-                    'url'  => 'admin/home-page/home-page-expert-area',
-                ],
-                [
-                    'text' => 'Awards',
-                    'icon' => 'fas fa-award nav-icon',
-                    'url'  => 'admin/home-page/home-page-awards',
+                    'url'  => 'admin/home-page/home-page-expert',
                 ],
             ],
         ],
         [
-            'text'    => 'About',
-            'icon'    => 'nav-icon fas fa-address-card',
-            'submenu' => [
-                [
-                    'text' => 'Cover Photo',
-                    'icon' => 'fas fa-portrait nav-icon',
-                    'url'  => 'admin/about/cover-photo',
-                ],
-                [
-                    'text' => 'Autobiography',
-                    'icon' => 'fas fa-font nav-icon',
-                    'url'  => 'admin/about/autobiography',
-                ],
-                [
-                    'text' => 'Static Slider 1',
-                    'icon' => 'fas fa-sliders-h nav-icon',
-                    'url'  => 'admin/about/static-slider-1',
-                ],
-                [
-                    'text' => 'Expert Area',
-                    'icon' => 'fas fa-thumbs-up nav-icon',
-                    'url'  => 'admin/about/expert-area',
-                ],
-                [
-                    'text' => 'Static Slider 2',
-                    'icon' => 'fas fa-sliders-h nav-icon',
-                    'url'  => 'admin/about/static-slider-2',
-                ],
-            ],
+            'text' => 'Blog',
+            'url'  => 'admin/blog',
+            'icon' => 'nav-icon fas fa-blog',
         ],
         [
             'text' => 'Contact',
