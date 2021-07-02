@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin;
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -33,3 +33,5 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('/contact', [Admin\ContactController::class, 'index'])->name('contact.index');
     Route::post('/contact', [Admin\ContactController::class, 'store'])->name('contact.store');
 });
+
+Route::view('/', 'pages.index');
