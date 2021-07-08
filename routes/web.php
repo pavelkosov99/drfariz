@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin;
 
@@ -34,4 +35,4 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::post('/contact', [Admin\ContactController::class, 'store'])->name('contact.store');
 });
 
-Route::view('/', 'pages.index');
+Route::get('/', [Controllers\HomePageController::class, 'index'])->name('index');
