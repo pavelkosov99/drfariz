@@ -1230,16 +1230,6 @@ h3 {
   margin-right: 7px;
 }
 
-/* line 1, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
-.slider_bg_1 {
-  background-image: url(../img/banner/banner.png);
-}
-
-/* line 4, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
-.slider_bg_2 {
-  background-image: url(../img/banner/banner2.png);
-}
-
 /* line 8, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
 .slider_area .single_slider {
   height: 700px;
@@ -2826,16 +2816,6 @@ h3 {
 .testmonial_area .owl-carousel .owl-nav div.owl-next {
   right: 340px;
   left: auto;
-}
-
-/* line 58, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_tesmonial.scss */
-.testmonial_bg_1 {
-  background-image: url(../img/testmonial/1.png);
-}
-
-/* line 61, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_tesmonial.scss */
-.testmonial_bg_2 {
-  background-image: url(../img/testmonial/2.png);
 }
 
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */

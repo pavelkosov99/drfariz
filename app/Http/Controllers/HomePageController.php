@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\HomePageComment;
 use App\Models\HomePageDepartment;
 use App\Models\HomePageExpert;
@@ -12,7 +13,7 @@ use App\Models\HomePageWelcome;
 class HomePageController extends Controller
 {
     public function index(HomePageSlider $homePageSlider, HomePageSpeciality $homePageSpeciality, HomePageWelcome $homePageWelcome,
-                          HomePageDepartment $homePageDepartment, HomePageComment $homePageComment, HomePageExpert $homePageExpert)
+                          HomePageDepartment $homePageDepartment, HomePageComment $homePageComment, HomePageExpert $homePageExpert, Contact $contactModel)
     {
         $sliders = $homePageSlider->query()->orderBy('updated_at', 'desc')->get();
 
@@ -26,6 +27,8 @@ class HomePageController extends Controller
 
         $experts = $homePageExpert->query()->orderBy('updated_at', 'desc')->get();
 
-        return view('pages.index')->with(compact('sliders','speciality','welcome','departments','comments','experts'));
+        $contact = $contactModel->query()->firstOrFail();
+
+        return view('pages.index')->with(compact('sliders','speciality','welcome','departments','comments','experts', 'contact'));
     }
 }

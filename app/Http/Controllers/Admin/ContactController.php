@@ -25,6 +25,7 @@ class ContactController extends Controller
             'whatsapp' => ['required'],
             'instagram' => ['required'],
             'facebook' => ['required'],
+            'mail' => ['required'],
         ]);
 
         $model->updateOrCreate(
@@ -38,6 +39,7 @@ class ContactController extends Controller
                 'whatsapp' => $request->input('whatsapp'),
                 'instagram' => $request->input('instagram'),
                 'facebook' => $request->input('facebook'),
+                'mail' => $request->input('mail'),
             ]
         );
 

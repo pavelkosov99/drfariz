@@ -5,6 +5,8 @@ use App\Http\Controllers;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin;
 
+Route::any('/sendmail', [Controllers\MailController::class])->name('sendmail');
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -36,3 +38,5 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 });
 
 Route::get('/', [Controllers\HomePageController::class, 'index'])->name('index');
+
+Route::get('/contact', [Controllers\ContactController::class, 'index'])->name('contact');

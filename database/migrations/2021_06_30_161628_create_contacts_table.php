@@ -21,6 +21,7 @@ class CreateContactsTable extends Migration
             $table->text('whatsapp');
             $table->text('instagram');
             $table->text('facebook');
+            $table->text('mail');
             $table->timestamps();
         });
     }
