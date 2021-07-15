@@ -25,3 +25,4 @@
     </section>
     <!--================ Blog Area end =================-->
 @endsection
+

@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'name'        => 'admin',
             'email'       => 'admin@admin.com',
             'email_verified_at' => Carbon::now()->toDateTimeString(),
-            'password'    => bcrypt('admin'),
+            'password'    => bcrypt('admin123'),
             'created_at' => Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);

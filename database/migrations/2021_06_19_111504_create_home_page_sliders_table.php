@@ -17,7 +17,6 @@ class CreateHomePageSlidersTable extends Migration
             $table->id();
             $table->text('title');
             $table->text('subtitle');
-            $table->text('text');
             $table->text('image');
             $table->timestamps();
         });

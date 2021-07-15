@@ -38,7 +38,7 @@
                         </h3>
                         <ul>
                             <li><a href="{{route('index')}}">{{__('Ana səhifə')}}</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="{{route('blog')}}">Blog</a></li>
                             <li><a href="{{route('contact')}}">{{__('Əlaqə')}}</a></li>
                             <li><a href="{{$contact->whatsapp}}">{{__('Qəbula yazıl')}}</a></li>
                         </ul>

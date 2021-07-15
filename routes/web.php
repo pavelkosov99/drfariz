@@ -5,15 +5,7 @@ use App\Http\Controllers;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin;
 
-Route::any('/sendmail', [Controllers\MailController::class])->name('sendmail');
-
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Auth::routes(['register' => false]);
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::view('/', 'admin.index')->name('admin.index');
@@ -35,8 +27,20 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
     Route::get('/contact', [Admin\ContactController::class, 'index'])->name('contact.index');
     Route::post('/contact', [Admin\ContactController::class, 'store'])->name('contact.store');
+
+    Route::get('/change-password',[Admin\ChangePasswordController::class, 'index'])->name('change_password.index');
+    Route::post('/change-password',[Admin\ChangePasswordController::class, 'store'])->name('change_password.store');
 });
 
-Route::get('/', [Controllers\HomePageController::class, 'index'])->name('index');
+Route::any('/sendmail', [Controllers\MailController::class])->name('sendmail');
 
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [Controllers\HomePageController::class, 'index'])->name('index');
 Route::get('/contact', [Controllers\ContactController::class, 'index'])->name('contact');
+Route::get('/blog', [Controllers\BlogController::class, 'index'])->name('blog');
+Route::get('/blog/post/{post}', [Controllers\BlogController::class, 'show'])->name('blog.post.show');
+Route::get('/departments/{department}', [Controllers\BlogController::class, 'show'])->name('department.show');

@@ -31,4 +31,11 @@ class HomePageController extends Controller
 
         return view('pages.index')->with(compact('sliders','speciality','welcome','departments','comments','experts', 'contact'));
     }
+
+    public function department(HomePageDepartment $model, $id)
+    {
+        $department = $model->query()->findOrFail($id);
+
+        return view('pages.department')->with(compact('department'));
+    }
 }

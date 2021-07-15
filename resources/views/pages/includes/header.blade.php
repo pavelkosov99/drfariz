@@ -58,7 +58,7 @@
                             <nav>
                                 <ul id="navigation">
                                     <li><a class="active" href="{{route('index')}}">{{__('Ana səhifə')}}</a></li>
-                                    <li><a href="#">{{__('Blog')}}</a> </li>
+                                    <li><a href="{{route('blog')}}">{{__('Blog')}}</a> </li>
                                     <li><a href="{{route('contact')}}">{{__('Əlaqə')}}</a></li>
                                 </ul>
                             </nav>

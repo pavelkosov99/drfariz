@@ -27,7 +27,6 @@ class ExpertController extends Controller
         $request->validate([
             'title' => ['required'],
             'subtitle' => ['required'],
-            'text' => ['required'],
             'image' => ['required'],
         ]);
 
@@ -37,7 +36,6 @@ class ExpertController extends Controller
 
         $model->title = $request->input('title');
         $model->subtitle = $request->input('subtitle');
-        $model->text = $request->input('text');
 
         $model->save();
 
@@ -63,7 +61,6 @@ class ExpertController extends Controller
         $request->validate([
             'title' => ['required'],
             'subtitle' => ['required'],
-            'text' => ['required'],
         ]);
 
         $expert = $model->findOrFail($id);
@@ -78,7 +75,6 @@ class ExpertController extends Controller
 
         $expert->title = $request->input('title');
         $expert->subtitle = $request->input('subtitle');
-        $expert->text = $request->input('text');
 
         $expert->save();
 

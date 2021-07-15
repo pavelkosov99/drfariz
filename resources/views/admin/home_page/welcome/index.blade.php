@@ -2,6 +2,21 @@
     $config = [
         "height" => "300",
         "width"  => "950",
+
+        "toolbar" => [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontname'],
+            ['forecolor'],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+        ],
     ]
 @endphp
 
@@ -55,7 +70,7 @@
             </div>
         @endforelse
         <div class="ml-2">
-            <x-adminlte-button name="submit" class="btn-flat mt-2 mb-2" type="submit" label="Add a slide" theme="success" icon="fas fa-lg fa-plus"/>
+            <x-adminlte-button name="submit" class="btn-flat mt-2 mb-2" type="submit" label="Submit" theme="success" icon="fas fa-lg fa-plus"/>
         </div>
     </form>
 @stop

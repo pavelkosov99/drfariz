@@ -13,7 +13,6 @@
                                 <div class="slider_text">
                                     <h3>{{$slider->title}}</h3>
                                     <p>{{$slider->subtitle}}</p>
-                                    <a href="#" class="boxed-btn3">Ətraflı</a>
                                 </div>
                             </div>
                         </div>
@@ -27,7 +26,6 @@
                                 <div class="slider_text ">
                                     <h3>{{__('No data')}}</h3>
                                     <p>{{__('No data')}}</p>
-                                    <a href="#" class="boxed-btn3">{{__('No data')}}</a>
                                 </div>
                             </div>
                         </div>
@@ -156,9 +154,9 @@
                                 <img src="{{$department->image}}" alt="">
                             </div>
                             <div class="department_content">
-                                <h3><a href="#">{{$department->title}}</a></h3>
+                                <h3><a href="{{route('department.show', $department->id)}}">{{$department->title}}</a></h3>
                                 <p>{{$department->subtitle}}</p>
-                                <a href="#" class="learn_more">{{__('Ətraflı')}}</a>
+                                <a href="{{route('department.show', $department->id)}}" class="learn_more">{{__('Ətraflı')}}</a>
                             </div>
                         </div>
                     </div>

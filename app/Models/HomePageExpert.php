@@ -12,7 +12,6 @@ class HomePageExpert extends Model
     protected $fillable = [
         'title',
         'subtitle',
-        'text',
         'image'
     ];
 }

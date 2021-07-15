@@ -28,7 +28,6 @@ class SliderController extends Controller
         $request->validate([
             'title' => ['required'],
             'subtitle' => ['required'],
-            'text' => ['required'],
             'image' => ['required'],
         ]);
 
@@ -38,7 +37,6 @@ class SliderController extends Controller
 
         $model->title = $request->input('title');
         $model->subtitle = $request->input('subtitle');
-        $model->text = $request->input('text');
 
         $model->save();
 
@@ -64,7 +62,6 @@ class SliderController extends Controller
         $request->validate([
             'title' => ['required'],
             'subtitle' => ['required'],
-            'text' => ['required'],
         ]);
 
         $slide = $model->findOrFail($id);
@@ -79,7 +76,6 @@ class SliderController extends Controller
 
         $slide->title = $request->input('title');
         $slide->subtitle = $request->input('subtitle');
-        $slide->text = $request->input('text');
 
         $slide->save();
 
