@@ -18,6 +18,6 @@ class BlogController extends Controller
     {
         $blog = $model->query()->findOrFail($id);
 
-        return view('pages.blog.show')->with(compact('blog', 'posts'));
+        return view('pages.blog.show')->with(compact('blog'));
     }
 }

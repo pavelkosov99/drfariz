@@ -8,14 +8,14 @@
                 <div class="col-lg-8 posts-list">
                     <div class="single-post">
                         <div class="feature-img">
-                            <img class="img-fluid" src="{{asset($blog->image)}}" alt="">
+                            <img class="img-fluid" src="{{asset($department->image)}}" alt="">
                         </div>
                         <div class="blog_details">
                             <h2>
-                                {{$blog->title}}
+                                {{$department->title}}
                             </h2>
                             <p>
-                                {!! $blog->text !!}
+                                {!! $department->text !!}
                             </p>
                         </div>
                     </div>

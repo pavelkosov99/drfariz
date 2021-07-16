@@ -5,7 +5,9 @@ use App\Http\Controllers;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin;
 
-Auth::routes(['register' => false]);
+Auth::routes(
+    ['register' => false]
+);
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::view('/', 'admin.index')->name('admin.index');
@@ -39,8 +41,12 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::get('/', [Controllers\HomePageController::class, 'index'])->name('index');
+
 Route::get('/contact', [Controllers\ContactController::class, 'index'])->name('contact');
+
 Route::get('/blog', [Controllers\BlogController::class, 'index'])->name('blog');
 Route::get('/blog/post/{post}', [Controllers\BlogController::class, 'show'])->name('blog.post.show');
-Route::get('/departments/{department}', [Controllers\BlogController::class, 'show'])->name('department.show');
+
+Route::get('/departments/{department}', [Controllers\HomePageController::class, 'department'])->name('department.show');
